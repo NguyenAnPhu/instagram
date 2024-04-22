@@ -1,0 +1,17 @@
+Chia component:
+- Navbar (logo-menu-footerNav)
+- HomePage:
+    +Content:story-post
+    +Sidebar:account-suggest-footerSideBar
+    +Footer
+- Search(Popup)
+- Explore: contentIMG
+- Reels: contentReels
+- Messages: inbox-content
+- Notification(Popup)
+- Create(Form)
+- Personal: info-myStory-reels
+- Seemore(submenu)
+Layouts:
+-default(NavbarComponents)
+-auth(Đăng nhập)
