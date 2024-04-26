@@ -5,7 +5,7 @@
         <span class="text-sm text-gray-400"><b>Gợi ý cho bạn</b></span>
         <span class="text-xs text-black"><b>Xem tất cả</b></span>
       </div>
-      <div>
+      <div class="ml-2">
         <div class="flex justify-between w-full h-auto py-2">
           <div class="flex">
             <img
