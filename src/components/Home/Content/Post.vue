@@ -1,8 +1,6 @@
 <template>
-  <div
-    class="post-content flex flex-col justify-center divide-y-2 items-center"
-  >
-    <div class="">
+  <div class="post-content flex flex-col justify-center items-center">
+    <div class="divide-y-2">
       <div class="post-content-sub py-4">
         <div class="header-brand flex justify-between mb-4 text-sm">
           <div class="flex">
@@ -29,10 +27,13 @@
               >• 4 ngày</span
             >
           </div>
-          <div class="flex items-end">
+          <div
+            class="flex items-end cursor-pointer"
+            @click="openOptions = true"
+          >
             <svg
               aria-label="Tùy chọn khác"
-              class="x1lliihq x1n2onr6 x5n08af"
+              class=""
               fill="currentColor"
               height="24"
               role="img"
@@ -189,7 +190,11 @@
           Xem tất cả bình luận
         </div>
         <div class="post-comment flex justify-between">
-          <input type="text" class="w-full border-0 outline-0" />
+          <input
+            type="text"
+            class="text-sm w-full border-0 outline-0 mt-2"
+            placeholder="Thêm bình luận... "
+          />
           <div class="flex">
             <span class="text-cyan-400 text-sm cursor-pointer px-4">Đăng</span>
             <div class="icon-react cursor-pointer">
@@ -237,10 +242,13 @@
               >• 4 ngày</span
             >
           </div>
-          <div class="flex items-end">
+          <div
+            class="flex items-end cursor-pointer"
+            @click="openOptions = true"
+          >
             <svg
               aria-label="Tùy chọn khác"
-              class="x1lliihq x1n2onr6 x5n08af"
+              class=""
               fill="currentColor"
               height="24"
               role="img"
@@ -396,18 +404,153 @@
         <div class="open-cmt text-gray-400 text-sm mt-2">
           Xem tất cả bình luận
         </div>
-        <div class="post-comment">
+        <div class="post-comment flex justify-between">
+          <input
+            type="text"
+            class="text-sm w-full border-0 outline-0 mt-2"
+            placeholder="Thêm bình luận... "
+          />
           <div class="flex">
-            <input type="text" class="w-full border-0 outline-0" />
-            <div>
-              <span class="text-cyan-400 text-sm">Đăng</span>
+            <span class="text-cyan-400 text-sm cursor-pointer px-4">Đăng</span>
+            <div class="icon-react cursor-pointer">
+              <svg
+                aria-label="Biểu tượng cảm xúc"
+                class="x1lliihq x1n2onr6 x1roi4f4"
+                fill="currentColor"
+                height="13"
+                role="img"
+                viewBox="0 0 24 24"
+                width="13"
+              >
+                <title>Biểu tượng cảm xúc</title>
+                <path
+                  d="M15.83 10.997a1.167 1.167 0 1 0 1.167 1.167 1.167 1.167 0 0 0-1.167-1.167Zm-6.5 1.167a1.167 1.167 0 1 0-1.166 1.167 1.167 1.167 0 0 0 1.166-1.167Zm5.163 3.24a3.406 3.406 0 0 1-4.982.007 1 1 0 1 0-1.557 1.256 5.397 5.397 0 0 0 8.09 0 1 1 0 0 0-1.55-1.263ZM12 .503a11.5 11.5 0 1 0 11.5 11.5A11.513 11.513 0 0 0 12 .503Zm0 21a9.5 9.5 0 1 1 9.5-9.5 9.51 9.51 0 0 1-9.5 9.5Z"
+                ></path>
+              </svg>
             </div>
           </div>
         </div>
       </div>
+
+      <TransitionRoot as="template" :show="openOptions">
+        <Dialog as="div" class="relative z-10" @close="openOptions = false">
+          <TransitionChild
+            as="template"
+            enter="ease-out duration-300"
+            enter-from="opacity-0"
+            enter-to="opacity-100"
+            leave="ease-in duration-200"
+            leave-from="opacity-100"
+            leave-to="opacity-0"
+          >
+            <div
+              class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+            />
+          </TransitionChild>
+
+          <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div
+              class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+            >
+              <TransitionChild
+                as="template"
+                enter="ease-out duration-300"
+                enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                enter-to="opacity-100 translate-y-0 sm:scale-100"
+                leave="ease-in duration-200"
+                leave-from="opacity-100 translate-y-0 sm:scale-100"
+                leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+              >
+                <DialogPanel
+                  class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+                >
+                  <div class="bg-white max-w-full h-full">
+                    <div class="w-full" role="dialog">
+                      <div class="flex flex-col h-full max-w-full">
+                        <div class="flex w-full">
+                          <div class="flex flex-col justify-center w-full">
+                            <button
+                              class="p-2 text-[#ED4956] font-bold border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Báo cáo</button
+                            ><button
+                              class="p-2 text-[#ED4956] font-bold border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Bỏ theo dõi</button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Thêm vào mục yêu thích</button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              <a class="" href="" role="link" tabindex="0"
+                                ><span
+                                  class=""
+                                  dir="auto"
+                                  style="
+                                    line-height: var(
+                                      --base-line-clamp-line-height
+                                    );
+                                    --base-line-clamp-line-height: 18px;
+                                  "
+                                  >Đi đến bài viết</span
+                                ></a
+                              ></button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              <span
+                                class=""
+                                dir="auto"
+                                style="
+                                  line-height: var(
+                                    --base-line-clamp-line-height
+                                  );
+                                  --base-line-clamp-line-height: 18px;
+                                "
+                                >Chia sẻ lên...</span
+                              ></button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Sao chép liên kết</button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Nhúng</button
+                            ><button
+                              class="p-2 border-b border-gray-300 w-full hover:bg-gray-200"
+                              tabindex="0"
+                            >
+                              Giới thiệu về tài khoản này</button
+                            ><button
+                              class="p-2 w-full hover:bg-gray-200"
+                              tabindex="0"
+                              @click="openOptions = false"
+                            >
+                              Hủy
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </TransitionRoot>
     </div>
   </div>
-  <div class=""></div>
 </template>
 
 <style lang="css" scoped>
@@ -418,3 +561,14 @@
   width: min(470px, 100vw);
 }
 </style>
+<script setup>
+import { ref } from "vue";
+import {
+  Dialog,
+  DialogPanel,
+  TransitionChild,
+  TransitionRoot,
+} from "@headlessui/vue";
+
+const openOptions = ref(false);
+</script>
