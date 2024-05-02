@@ -54,7 +54,7 @@
       <div class="w-full h-full border-2 border-white rounded-full">
         <img
           class="img rounded-full min-w-14 min-h-14"
-          src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t39.30808-6/347086643_235661745819924_1221941616719174306_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=UB_oMWyLYI4Ab6W50lT&_nc_ht=scontent.fsgn5-2.fna&oh=00_AfDhdasXbTlgAf7X4TrXB4q8XinMM3UYluMbLYH4hY7EFg&oe=662EFB96"
+          src="https://i.pinimg.com/564x/fa/33/6a/fa336aa0f8ec86320f99bd4efbbca29e.jpg"
           alt=""
           srcset=""
         />
