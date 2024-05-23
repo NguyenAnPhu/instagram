@@ -5,9 +5,23 @@ const routes = [
   {
     path: "/",
     name: "home",
-    meta: { layouts: "default" },
+    meta: { layout: "default" },
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Home/index.vue"),
+  },
+  {
+    path: "/login",
+    name: "login",
+    meta: { layout: "auth" },
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Home/login.vue"),
+  },
+  {
+    path: "/register",
+    name: "register",
+    meta: { layout: "auth" },
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Home/register.vue"),
   },
 ];
 

@@ -4,4 +4,8 @@ export function registerGlobalComponents(app) {
     "default-layout",
     defineAsyncComponent(() => import("../layouts/default.vue"))
   );
+  app.component(
+    "auth-layout",
+    defineAsyncComponent(() => import("../layouts/auth.vue"))
+  );
 }
